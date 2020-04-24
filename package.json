@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "dev": "npm run clean && webpack-dev-server --config ./tools/development.js"
+    "dev": "npm run clean && webpack-dev-server --config ./tools/development.js",
+    "lint": "eslint src/**/*.tsx",
+    "lint:fix": "eslint --fix src/**/*.tsx"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +30,11 @@
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.1",
     "webpack-dev-server": "^3.10.3"
