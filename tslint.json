@@ -1,0 +1,15 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+      "no-angle-bracket-type-assertion": false,
+      "typescript.tsc.autoDetect": "off",
+      "new-parens": false,
+      "no-unused-expression": false,
+      "no-empty": false
+    },
+    "rulesDirectory": []
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">TODO List</span>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <!-- 리스트 추가하기 -->
+        <div class="col-lg-12 m-t-20">
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h6 class="card-title">리스트 추가</h5>
+              <div class="form-group">
+                <textarea data-element="input" type="text" class="form-control" placeholder="할 일 입력해주세요"></textarea>
+                <button data-element="insert" type="button" class="btn btn-secondary m-t-20 float-right">추가하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 정렬 기준 -->
+        <div class="col-lg-12 m-t-20">
+          <div class="form-group">
+            <select class="form-control float-right" data-element="filter" style="width: 150px;">
+              <option value="total">전체</option>
+              <option value="incompleted">할일</option>
+              <option value="completed">완료</option>
+            </select>
+          </div>
+        </div>
+        <!-- 미완료 리스트 -->
+        <div class="col-lg-12 m-t-20" data-container="incompleted">
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h6 class="card-title">할일 목록</h6>
+              <!-- todo list -->
+              <div class="list-group" data-element="incompletedList" style="margin-top: 70px;">
+              </div>
+              <div class="form-group">
+                <button data-button="success" type="button" class="btn btn-primary m-t-20 float-right">완료하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  미완료 리스트 -->
+        <div class="col-lg-12 m-t-20" data-container="completed">
+            <div class="card" style="width: 100%;">
+              <div class="card-body">
+                <h6 class="card-title">완료된 목록</h6>
+                <!-- todo list -->
+                <div class="list-group" style="margin-top: 70px;" data-element="completedList">
+                </div>
+                <div class="form-group">
+                  <button data-button="recover" type="button" class="btn btn-info m-t-20 float-right">복구하기</button>
+                  <button data-button="delete" type="button" class="btn btn-danger m-t-20 float-right">삭제하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- modal component  -->
+    <div class="modal" data-container="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element="close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p data-element="message"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-element="confirm">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
